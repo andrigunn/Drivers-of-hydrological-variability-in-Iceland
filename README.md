@@ -140,29 +140,4 @@ Both reanalyses were processed from the sub-daily output into monthly fields on 
 - Spatially, the rain increase in autumn is strongest and significant in the south and east, and the winter rain increase along the south coast. Snow decreases on the northern and eastern coasts and in summer on the glacier margins, while it increases in the high terrain of the Westfjords and the glacier interiors in winter (more precipitation falling as snow at high elevation).
 - **Wind direction** (notebook 02): precipitation in the south and southeast arrives mostly with southeasterly and southerly winds (SE and S together 40-50 % of winter precipitation in regimes 1 and 4), whereas the north and glacier regimes (2 and 3) get a larger share from N-NE flow in summer and autumn. Sector trend maps are produced for both datasets but are exploratory and not yet interpreted.
 
-## Caveats
 
-- Trends are OLS or Theil-Sen with a Mann-Kendall p-value and no general adjustment for autocorrelation (except where stated), and multiple-testing control (FDR) only where noted.
-- The reanalyses are not bias-corrected. Relative changes are more reliable than absolute amounts, and the sleet share is not directly comparable between RAV2 (hourly) and CARRA (3-hourly).
-- The merged RAV2/CARRA series may have a break at the 1991 join.
-- The ERA5 regions and indices were selected using the full record and should not be read as out-of-sample evidence.
-
-## Next steps
-
-- Link the small-scale changes (autumn rain, summer snow loss) to the observed regime runoff changes (spring and autumn increase, summer decrease in regime 3) with the same catchments and seasons.
-- Quantify how much of the runoff change is explained by phase change versus total precipitation and by large-scale circulation.
-- Interpret the wind-sector trends together with the large-scale circulation (EOF/pressure patterns).
-- Repeat the forecast evaluation with predictors selected only on training data.
-
-## Repository layout
-
-```
-code/notebooks/                  (local analysis code, not part of this overview)
-  flow-groundwater-variabilty/   flow regimes, groundwater variability
-  large-scale-driver/            ERA5 trends, EOFs, correlations, forecasts (00-10)
-  small-scale-drivers/           RAV2/CARRA precipitation phase and wind direction (00-02) + extraction script
-docs/figures/                    the overview figures shown above
-data/, image/, old/              inputs, derived data, all other figures and archived material
-```
-
-The small-scale fields are produced with `python small_scale_extract.py carra|rav2` (run from `code/notebooks/small-scale-drivers/`) before the notebooks.
