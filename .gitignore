@@ -1,0 +1,18 @@
+# Data (36 GB), figures (only docs/figures is shared), archived material (32 GB) and environments
+data/
+image/
+old/
+.venv/
+
+# Editor, OS and Office lock files
+.DS_Store
+~$*
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Manuscript draft
+*.docx
